@@ -1,20 +1,20 @@
 package converter;
 
 
-import dto.UserDTO;
+import dto.UserDto;
 import entities.UserEntity;
 
 public class UserConverter {
 
-    public static UserDTO toDto(UserEntity entity) {
-        UserDTO toReturn = new UserDTO();
+    public static UserDto toDto(UserEntity entity) {
+        UserDto toReturn = new UserDto();
         toReturn.setId(entity.getId());
         toReturn.setName(entity.getName());
         toReturn.setEmail(entity.getEmail());
         return toReturn;
     }
 
-    public static UserEntity toEntity(UserDTO dto) {
+    public static UserEntity toEntity(UserDto dto) {
         UserEntity toReturn = new UserEntity();
         toReturn.setId(dto.getId());
         toReturn.setName(dto.getName());

@@ -2,7 +2,7 @@ package controller;
 
 
 import converter.UserConverter;
-import dto.UserDTO;
+import dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import services.UserService;
@@ -16,11 +16,10 @@ public class UserController {
     @DeleteMapping("/deleteUser")
     public void deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
-
     }
 
     @PostMapping("/addUser")
-    public UserDTO addUser(@RequestBody UserDTO user) {
+    public UserDto addUser(@RequestBody UserDto user) {
 
 
         return UserConverter.toDto(userService.addUser(user));

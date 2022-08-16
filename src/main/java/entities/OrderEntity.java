@@ -1,5 +1,6 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Where(clause = "valid=true or valid=null")
+@NamedQuery(name = "Order.findAll", query = "SELECT order FROM OrderEntity order ")
 public class OrderEntity implements Serializable {
 
     private static final int serialVersionUID = 1;
@@ -30,14 +32,21 @@ public class OrderEntity implements Serializable {
     @Column(name = "created_on")
     private Date createdOn;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
-    //user_id
-    //car_id
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private CarEntity car;
 
     @Column(name = "date_from")
     private Date dateFrom;
 
     @Column(name = "date_until")
     private Date dateUntil;
+
+    @OneToMany(mappedBy = "OrderList")
+    private List<OrderEntity> orders = new ArrayList<>();
 
 }

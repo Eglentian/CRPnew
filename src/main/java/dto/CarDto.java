@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class CarDTO {
+public class CarDto {
     private int id;
 
     private String model;

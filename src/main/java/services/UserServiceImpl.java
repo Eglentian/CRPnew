@@ -1,6 +1,6 @@
 package services;
 
-import dto.UserDTO;
+import dto.UserDto;
 import entities.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +16,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     OrderRepository orderRepository;
 
-    public UserEntity addUser(UserDTO user) {
+    public UserEntity addUser(UserDto user) {
         return null;
     }
 
-    public boolean deleteUser(Integer id) {
-        return true;
+    public void deleteUser(Integer id) {
     }
 
     public void testTransaction() {

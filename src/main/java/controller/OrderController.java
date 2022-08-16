@@ -2,7 +2,7 @@ package controller;
 
 
 import converter.OrderConverter;
-import dto.OrderDTO;
+import dto.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import services.OrderService;
@@ -13,20 +13,26 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
-    @DeleteMapping("/deleteOrder")
-    public void deleteOrder(@PathVariable Integer id) {
-        orderService.deleteOrder(id);
 
+    @PutMapping("/updateOrder")
+    public void updateOrder(@PathVariable Integer id) {
+        orderService.updateOrder(id);
     }
 
     @PostMapping("/addOrder")
-    public OrderDTO addOrder(@RequestBody OrderDTO order) {
+    public OrderDto addOrder(@RequestBody OrderDto order) {
         return OrderConverter.toDto(orderService.addOrder(order));
     }
 
     @PostMapping("/testTransaction")
     public void testTransaction() {
         orderService.testTransaction();
+    }
+
+    @DeleteMapping("/deleteOrder")
+    public void deleteOrder(@PathVariable Integer id) {
+        orderService.deleteOrder(id);
+
     }
 
 }

@@ -1,6 +1,6 @@
 package services;
 
-import dto.CarDTO;
+import dto.CarDto;
 import entities.CarEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class CarServiceImpl implements CarService {
     @Autowired
     CarRepository carRepository;
 
-    public CarEntity addCar(CarDTO car) {
+    public CarEntity addCar(CarDto car) {
         return null;
     }
 

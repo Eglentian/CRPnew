@@ -1,12 +1,12 @@
 package services;
 
 
-import dto.CarDTO;
+import dto.CarDto;
 import entities.CarEntity;
 
 public interface CarService {
 
-    public CarEntity addCar(CarDTO car);
+    public CarEntity addCar(CarDto car);
 
     public boolean deleteCar(Integer id);
 

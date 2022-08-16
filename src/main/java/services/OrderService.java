@@ -1,14 +1,20 @@
 package services;
 
 
-import dto.OrderDTO;
+import dto.OrderDto;
 import entities.OrderEntity;
 
 public interface OrderService {
 
-    public OrderEntity addOrder(OrderDTO order);
+    public OrderEntity addOrder(OrderDto order);
 
-    public boolean deleteOrder(Integer id);
+    public OrderDto getOrderById(Integer id);
+
+    public void deleteOrder(Integer id);
+
+    public void updateOrder(Integer id);
+
+    OrderDto updateOrder(OrderDto orderDto);
 
     public void testTransaction();
 

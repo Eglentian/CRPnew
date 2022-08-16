@@ -2,13 +2,10 @@ package controller;
 
 
 import converter.CarConverter;
-import converter.UserConverter;
-import dto.CarDTO;
-import dto.UserDTO;
+import dto.CarDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import services.CarService;
-import services.UserService;
 
 @RestController
 public class CarController {
@@ -23,7 +20,7 @@ public class CarController {
     }
 
     @PostMapping("/addCar")
-    public CarDTO addCar(@RequestBody CarDTO car) {
+    public CarDto addCar(@RequestBody CarDto car) {
         return CarConverter.toDto(carService.addCar(car));
     }
 

@@ -12,10 +12,14 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
-public class OrderDTO {
+public class OrderDto {
 
     private Integer id;
 
     private Date createdOn;
+
+    private UserDto userDTO;
+
+    private CarDto carDTO;
 
 }
